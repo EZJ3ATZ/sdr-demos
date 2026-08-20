@@ -134,10 +134,28 @@ function buscar(){let r=BASE.filter(x=>true);
 async function inicio(){
  await bot('Olá! 👋 Bem-vindo à Vick Blindados. Sou o assistente digital da loja.');
  await bot('Me conta: que tipo de carro você procura?');
- chips([{t:'Esportivos',f:()=>{S.cat='esportivo';perguntaFaixa()}},{t:'SUVs premium',f:()=>{S.cat='suv';perguntaFaixa()}},{t:'Blindados',f:()=>{S.bl=true;perguntaFaixa()}},{t:'Picapes',f:()=>{S.cat='picape';perguntaFaixa()}}])}
+ chips(chipsIniciais())}
+function chipsIniciais(){
+ const conta=f=>BASE.filter(f).length;const ops=[];
+ if(conta(x=>x.cat==='esportivo')>=2)ops.push({t:'Esportivos',f:()=>{S.cat='esportivo';perguntaFaixa()}});
+ if(conta(x=>x.cat==='suv')>=2)ops.push({t:'SUVs premium',f:()=>{S.cat='suv';perguntaFaixa()}});
+ if(conta(x=>x.bl)>=2)ops.push({t:'Blindados',f:()=>{S.bl=true;perguntaFaixa()}});
+ if(conta(x=>x.cat==='picape')>=2)ops.push({t:'Picapes',f:()=>{S.cat='picape';perguntaFaixa()}});
+ if(conta(x=>x.cat==='sedan')>=2)ops.push({t:'Sedãs',f:()=>{S.cat='sedan';perguntaFaixa()}});
+ if(!ops.length)ops.push({t:'Ver o estoque',f:()=>perguntaFaixa()});
+ return ops.slice(0,4)}
+function rotuloBR(v){if(v>=1e6){const s=(v/1e6).toFixed(1).replace('.',',').replace(',0','');return 'R$ '+s+' milh'+(v<2e6?'ão':'ões')}return 'R$ '+Math.round(v/1000)+' mil'}
+function niceBR(v){for(const p of [1e6,5e5,1e5,5e4,1e4]){if(v>=p*2)return Math.round(v/p)*p}return v}
+function faixasDoFiltro(){
+ const r=BASE.filter(x=>(!S.cat||x.cat===S.cat)&&(!S.marca||x.marca===S.marca)&&(!S.bl||x.bl));
+ if(r.length<3)return FAIXAS;
+ const p=r.map(x=>x.preco).sort((a,b)=>a-b);
+ const q=[niceBR(p[Math.floor(p.length/4)]),niceBR(p[Math.floor(p.length/2)]),niceBR(p[Math.floor(3*p.length/4)])];
+ for(let i=1;i<3;i++)if(q[i]<=q[i-1])q[i]=niceBR(Math.round(q[i-1]*1.6));
+ return [{t:'Até '+rotuloBR(q[0]),v:q[0]},{t:'Até '+rotuloBR(q[1]),v:q[1]},{t:'Até '+rotuloBR(q[2]),v:q[2]},{t:'Acima de '+rotuloBR(q[2]),v:0}]}
 async function perguntaFaixa(){S.fase='faixa';
  await bot('Boa escolha. E qual faixa de valor você tem em mente?');
- chips(FAIXAS.map(f=>({t:f.t,f:()=>{if(f.v)S.teto=f.v;mostrar()}})))}
+ chips(faixasDoFiltro().map(f=>({t:f.t,f:()=>{if(f.v)S.teto=f.v;mostrar()}})))}
 async function mostrar(){S.fase='resultado';
  const r=buscar();
  if(!r.length){
@@ -150,7 +168,7 @@ async function mostrar(){S.fase='resultado';
  chips([{t:'📅 Agendar visita',f:agendar},{t:'Ver outras opções',f:mostrar},{t:'Mudar a busca',f:reiniciar}])}
 async function reiniciar(){S.cat=null;S.marca=null;S.teto=null;S.bl=null;S.mostrados.clear();
  await bot('Sem problema! Vamos recomeçar.');
- chips([{t:'Esportivos',f:()=>{S.cat='esportivo';perguntaFaixa()}},{t:'SUVs premium',f:()=>{S.cat='suv';perguntaFaixa()}},{t:'Blindados',f:()=>{S.bl=true;perguntaFaixa()}},{t:'Picapes',f:()=>{S.cat='picape';perguntaFaixa()}}])}
+ chips(chipsIniciais())}
 async function agendar(){S.fase='agenda';
  await bot('Perfeito! Qual período fica melhor pra você?');
  chips([{t:'Amanhã de manhã',f:()=>pedirNome('amanhã de manhã')},{t:'Amanhã à tarde',f:()=>pedirNome('amanhã à tarde')},{t:'Outro dia',f:()=>pedirNome('a combinar')}])}
