@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uma demonstração para a Carbig</title>
+<style>
+:root{--marca:#1f2854;--marca-escura:#11162e;--marca-clara:#e4e5ea}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f5f5f4;color:#1a1a19;line-height:1.6}
+.wrap{max-width:680px;margin:0 auto;padding:44px 22px 70px}
+.topo{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.topo img{height:44px;width:auto;max-width:170px;object-fit:contain;background:#111;border-radius:10px;padding:6px 12px}
+.topo span{font-size:12px;color:#8a8a85;border-left:1px solid #dcdcd6;padding-left:12px;line-height:1.4}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--marca);font-weight:700}
+h1{font-size:clamp(26px,6vw,38px);line-height:1.15;margin:12px 0 16px;color:var(--marca-escura)}
+.lede{font-size:17px;color:#54544e;margin-bottom:8px}
+.num{font-weight:800;color:var(--marca)}
+.cta{display:block;background:var(--marca);color:#fff;text-align:center;font-size:18px;font-weight:700;
+ padding:17px 20px;border-radius:14px;text-decoration:none;margin:30px 0 10px;box-shadow:0 6px 22px rgba(0,0,0,.25)}
+.cta:active{transform:translateY(1px)}
+.sub-cta{text-align:center;font-size:13px;color:#7d7d76;margin-bottom:34px}
+h2{font-size:20px;margin:38px 0 14px;color:var(--marca-escura)}
+.passos{display:flex;flex-direction:column;gap:12px}
+.passo{background:#fff;border:1px solid #e4e4dd;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+.passo .n{background:var(--marca);color:#fff;font-weight:800;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.passo b{display:block;margin-bottom:2px}
+.passo p{font-size:14px;color:#54544e}
+ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px}
+li{background:#fff;border:1px solid #e4e4dd;border-left:4px solid var(--marca);border-radius:12px;padding:13px 16px;font-size:14.5px;color:#3a3a35}
+li b{color:#1a1a19}
+.contato{background:#fff;border:2px solid var(--marca);border-radius:16px;padding:20px;margin-top:26px;text-align:center}
+.contato .ctit{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--marca);font-weight:700}
+.contato .cnome{font-size:17px;font-weight:700;margin:6px 0 14px}
+.cbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.cbtn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14.5px}
+.cbtn.wpp{background:#00a884;color:#fff}
+.cbtn.mail{background:var(--marca-clara);color:var(--marca-escura);border:1px solid var(--marca)}
+.honesto{background:var(--marca-clara);border:1px solid var(--marca);border-radius:12px;padding:14px 17px;font-size:13.5px;color:var(--marca-escura);margin-top:36px;line-height:1.55}
+.rodape{margin-top:34px;font-size:12.5px;color:#8a8a85;text-align:center;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="topo"><img src="data:image/png;base64,PHN2ZyBpZD0ibG9nby1jYXJiaWdjb20iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEzNS4yNSIgaGVpZ2h0PSI1OC45OCIgdmlld0JveD0iMCAwIDEzNS4yNSA1OC45OCI+CiAgPGcgaWQ9IkxheWVyXzEiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+CiAgICA8cGF0aCBpZD0iUGF0aF8xIiBkYXRhLW5hbWU9IlBhdGggMSIgZD0iTTkuNzc1LDU0Ljc0NEE5Ljc4MSw5Ljc4MSwwLDAsMSwwLDQ0Ljk2OVYzMi4yYTkuNzc1LDkuNzc1LDAsMCwxLDkuNzc1LTkuNzdIMjIuOTExdjguNDMySDkuNzc1QTEuMzM4LDEuMzM4LDAsMCwwLDguNDM3LDMyLjJWNDQuOTY5YTEuMzM4LDEuMzM4LDAsMCwwLDEuMzM4LDEuMzM4SDIyLjkxMXY4LjQzN1ptMjQuNzA4LDBhOS43ODEsOS43ODEsMCwwLDEtOS43NzUtOS43NzVWMzcuMzYyYTkuNzc1LDkuNzc1LDAsMCwxLDkuNzc1LTkuNzdoNy42YTkuNzc1LDkuNzc1LDAsMCwxLDkuNzgxLDkuNzdWNTQuNzQ0SDQzLjQyMlYzNy4zNjJhMS4zMzgsMS4zMzgsMCwwLDAtMS4zNDMtMS4zMzhoLTcuNmExLjMzOCwxLjMzOCwwLDAsMC0xLjMzOCwxLjMzOHY3LjYwN2ExLjMzOCwxLjMzOCwwLDAsMCwxLjMzOCwxLjMzOGg3LjZ2OC40MzdaTTY4LjczNCwyNy41OTN2OC40MzJINjMuNDc5YTEuMzM4LDEuMzM4LDAsMCwwLTEuMzM4LDEuMzM4VjU0Ljc0NEg1My43VjM3LjM2MmE5Ljc3NSw5Ljc3NSwwLDAsMSw5Ljc3NS05Ljc3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMTAuMzMpIiBmaWxsPSIjMWYyODU0Ii8+CiAgICA8cGF0aCBpZD0iUGF0aF8yIiBkYXRhLW5hbWU9IlBhdGggMiIgZD0iTTg5LjUsMTcuMjYzYTkuNzcsOS43NywwLDAsMSw5Ljc3LDkuNzd2Ny42MDZhOS43NzUsOS43NzUsMCwwLDEtOS43Nyw5Ljc3NUg4MS45NDVhOS43ODEsOS43ODEsMCwwLDEtOS43NjQtOS43NzVWNy43ODVoOC40MzdWMzQuNjM5YTEuMzM4LDEuMzM4LDAsMCwwLDEuMzM4LDEuMzM4aDcuNTUzYTEuMzM4LDEuMzM4LDAsMCwwLDEuMzM4LTEuMzM4VjI3LjAzM2ExLjMzOCwxLjMzOCwwLDAsMC0xLjMzOC0xLjMzOEg4MS45NTVWMTcuMjYzWm0xMS42MTUsMjcuMTUxVjEyLjY2N2g4LjQzN1Y0NC40MTRabTIwLjEtMjMuODM0SDEzNy4zVjEyLjE0M0gxMjEuMjEyYTkuODE4LDkuODE4LDAsMCwwLTkuODE4LDkuNzc1VjM0LjYzOWE5LjgxOCw5LjgxOCwwLDAsMCw5LjgxOCw5Ljc3NUgxMzcuM3YtMTUuOWgtLjA1OVYyNC44NTNIMTI0LjM0N1YzMS42aDQuNTE1djQuMzc1aC03LjY1YTEuMzc2LDEuMzc2LDAsMCwxLTEuMzgxLTEuMzM4VjIxLjkxOUExLjM3NiwxLjM3NiwwLDAsMSwxMjEuMjEyLDIwLjU4MVpNMTEwLjUxNSw5YS44MzEuODMxLDAsMCwxLC4yMzItLjI0MywxLjIwOCwxLjIwOCwwLDAsMSwuNTM5LS4xMTNjMS41MjctLjEyNCwxLjk2OS0uOTc2LDEuODYxLTIuNDA2YTIuMiwyLjIsMCwwLDAtLjEyOS0uNjc0LDEuNjE4LDEuNjE4LDAsMCwwLS43MjgtLjcxMiw5LjcxLDkuNzEsMCwwLDAtMi4wMjMtLjY4Yy0xLjYxOC0uNDY5LTIuNzc4LTEuODA3LTQuNDY3LTIuMjYtMS44MTMtLjQ4LTQuOTE1LS41OTMtNi40NzQuNjJhNC4zMjUsNC4zMjUsMCwwLDAtMS4zNDMsMi44NTksNC4yNTUsNC4yNTUsMCwwLDAtLjEwOC45NDRBMi4xMjUsMi4xMjUsMCwwLDAsOTkuMjQsOC4xNDZjLjMxMy4xMjQuOC4xLDEuMDc5LjMzNHMuMjIxLjc0NC43NS45NDlhMi45NTEsMi45NTEsMCwwLDAsMS42NzIuMTI5Yy41MzktLjExOS41MzktLjQxNS45NjYtLjY4YS42NDIuNjQyLDAsMCwxLC4zMTgtLjA3bDIuODQzLS4xMTNhMS4wMTQsMS4wMTQsMCwwLDEsLjc1NS4xNzNjLjQ3NS40NTMuNTM5Ljc3MSwxLjMyMi43NzdhMS44MjMsMS44MjMsMCwwLDAsMS40MTMtLjM4OGMuMDQzLS4wODYuMTI0LS4xNzMuMTU2LS4yNTRaTTk3LjkzNC45Qzk3LjMwOS44MzYsOTYuNDk0LjY1OCw5Ni4yLjY0Nyw5NS4yMzcuNjEsOTQuMjYxLjU4OCw5My4yOS41MzRjLTIuMDIzLS4xMTktNC4wNTEtLjIyMS02LjA3NC0uM1E4MS4zNTEsMCw3NS40ODIsMCw2NC42OTIsMCw1My45NzMuN0EzMDUuNiwzMDUuNiwwLDAsMCwyMC45MzEsNC42MzljLTUuMy45MzMtMTAuNjExLDEuOTg1LTE1LjgsMy4zNTZsLS42ODUuMTg5YzE0LjEwNy0xLjA3OSwyOC4yNDEtMS45NDIsNDIuNC0yLjQsOS4yMi0uMywxOC40NjEtLjQyNiwyNy42ODUtLjE2Nyw1LjMuMTUxLDEwLjYyMi40MTUsMTUuODkzLDEuMDI1LDEuOTEuMjIxLDMuODMuNTA3LDUuNzEzLjkxN2EzLjg2MywzLjg2MywwLDAsMS0xLjIzLTIuNjM4Qzk0Ljg4NiwzLjM1NSw5Ni4wNTIsMS45MzcsOTcuOTM0LjlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMi4wNDkpIiBmaWxsPSIjZTc0MzBmIi8+CiAgICA8cGF0aCBpZD0iUGF0aF8zIiBkYXRhLW5hbWU9IlBhdGggMyIgZD0iTTE3Ny4wNiw5OC4zNThoMy4xMTh2Mi41M0gxNzcuMDZabTcuMzY0LDIuNTE0YTMuNTYsMy41NiwwLDAsMS0zLjU3Ny0zLjU1NVY5NC41NUEzLjU2LDMuNTYsMCwwLDEsMTg0LjQyNCw5MWg0Ljc4djMuMDdoLTQuNzhhLjQ5MS40OTEsMCwwLDAtLjUwNy40ODZ2Mi43NjdhLjQ5MS40OTEsMCwwLDAsLjUwNy40ODZoNC43OHYzLjA3Wk0xOTYuMjExLDkxYTMuNTYsMy41NiwwLDAsMSwzLjU2MSwzLjU1NXYyLjc2N2EzLjU2LDMuNTYsMCwwLDEtMy41NjEsMy41NTVIMTkzLjQ2YTMuNTcxLDMuNTcxLDAsMCwxLTMuNTcxLTMuNTU1Vjk0LjU1QTMuNTcxLDMuNTcxLDAsMCwxLDE5My40Niw5MVptLTIuNzUxLDMuMDdhLjUuNSwwLDAsMC0uNS40ODZ2Mi43NjdhLjUuNSwwLDAsMCwuNS40ODZoMi43NTFhLjQ4NS40ODUsMCwwLDAsLjQ5MS0uNDg2Vjk0LjU1YS40ODYuNDg2LDAsMCwwLS40OTEtLjQ4NlpNMjA0LDk0LjA2NGEuNS41LDAsMCwwLS41LjQ4NnY2LjMyM2gtMy4wNTlWOTQuNTVBMy41NzEsMy41NzEsMCwwLDEsMjA0LDkxaDIuNDE3YTIuNjU0LDIuNjU0LDAsMCwxLDIuMDM5LDEuMDc5QTIuNjI3LDIuNjI3LDAsMCwxLDIxMC40NzUsOTFoMi40MzNhMy41NiwzLjU2LDAsMCwxLDMuNTYsMy41NTV2Ni4zMTdoLTMuMDc1Vjk0LjU1YS40ODYuNDg2LDAsMCwwLS40ODYtLjQ4NmgtMi40MzNhLjQ4Ni40ODYsMCwwLDAtLjQ4Ni40ODZ2Ni4zMjNoLTMuMDc1Vjk0LjU1YS40ODYuNDg2LDAsMCwwLS40ODYtLjQ4NloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MS41NDIgLTQxLjkwOCkiIGZpbGw9IiMxZjI4NTQiLz4KICA8L2c+Cjwvc3ZnPgo=" alt="Carbig"/><span>demonstração<br/>independente</span></div>
+ <div class="eyebrow">Preparada para a Carbig</div>
+ <h1>E se o WhatsApp da Carbig respondesse em segundos, 24 horas por dia?</h1>
+ <p class="lede">Quem procura um carro de alto padrão fala com mais de uma loja ao mesmo tempo. O primeiro atendimento que responde bem é o que leva a visita. Fora do horário, o lead espera. E quem espera esfria.</p>
+ <p class="lede">Para mostrar o que é possível, montamos um atendente de IA usando <span class="num">os 37 veículos do estoque público de vocês</span>. Ele entende o que o cliente procura do jeito que ele escreve, mostra os carros certos com foto e link, e entrega o lead qualificado: nome, contato, perfil de busca e veículos de interesse.</p>
+
+ <a class="cta" href="demo.html">Abrir a demonstração →</a>
+ <div class="sub-cta">Abre no navegador, sem instalar nada. Digite como um cliente digitaria. Peça um Porsche até 1 milhão.</div>
+
+ <h2>Como funcionaria na prática</h2>
+ <div class="passos">
+  <div class="passo"><div class="n">1</div><div><b>O lead chega</b><p>Do anúncio, do site ou do Instagram, no mesmo número de WhatsApp que vocês já usam.</p></div></div>
+  <div class="passo"><div class="n">2</div><div><b>A IA atende e qualifica</b><p>Em segundos, a qualquer hora. Esportivo ou SUV, blindado ou não, faixa de valor. E já mostra os carros certos do estoque, que se mantém atualizado sozinho.</p></div></div>
+  <div class="passo"><div class="n">3</div><div><b>O consultor recebe pronto</b><p>Lead qualificado com resumo completo no CRM de vocês e notificação na hora no WhatsApp do consultor. Ele entra pra fechar a visita.</p></div></div>
+ </div>
+
+ <h2>Por que isso importa</h2>
+ <ul>
+  <li><b>Menu não é atendimento.</b> O robô de apertar botão coleta nome e joga o cliente numa fila. Este aqui entende o que a pessoa escreveu, mostra o carro certo com foto e já agenda a visita.</li>
+  <li><b>Velocidade é conversão.</b> Lead de alto padrão respondido no primeiro minuto tem muito mais chance de virar visita do que o que espera horas.</li>
+  <li><b>Nenhum lead perdido.</b> Madrugada, domingo, feriado: o atendimento não dorme.</li>
+  <li><b>Inteligência de demanda:</b> o sistema registra o que os clientes pedem e o estoque não tem. Informação que hoje se perde na conversa.</li>
+ </ul>
+
+ <h2>E se vocês precisarem diferente?</h2>
+ <p class="lede">A solução é nossa de ponta a ponta, do motor de conversa ao painel. Então ela se molda ao jeito de vocês: fluxo de atendimento, regras de repasse por consultor, relatórios, integração com o CRM que vocês já usam.</p>
+ <p class="lede">E não precisa parar no atendimento. Se vocês enxergam gargalo em outro processo, avaliação de troca, pós-venda, documentação, e acharem pertinente, a gente marca uma conversa: eu entendo como funciona hoje e digo com franqueza o que dá pra otimizar com IA e o que não vale a pena.</p>
+
+ <div class="contato">
+  <div class="ctit">Falar com quem fez</div>
+  <div class="cnome">Matheus Costa · Belo Horizonte</div>
+  <div class="cbtns">
+   <a class="cbtn wpp" href="https://wa.me/5531982201678?text=Oi%20Matheus%2C%20vi%20a%20demonstra%C3%A7%C3%A3o%20da%20Carbig">WhatsApp (31) 98220-1678</a>
+   <a class="cbtn mail" href="mailto:matheusviniciuscosta2007@gmail.com">matheusviniciuscosta2007@gmail.com</a>
+  </div>
+ </div>
+
+ <div class="honesto">Transparência: isto é uma demonstração técnica independente, construída apenas com informações públicas do site carbig.com. Nenhum dado interno foi acessado e não há vínculo com a Carbig. Os veículos exibidos são os anúncios públicos de vocês; o atendente é ilustrativo e não representa a empresa. Esta demonstração não grava nada: tudo roda no navegador de quem testa.</div>
+
+ <div class="rodape">Preparado por Matheus Costa · Belo Horizonte · 2026<br/>Se fizer sentido, a conversa é rápida e sem compromisso.</div>
+</div>
+</body>
+</html>

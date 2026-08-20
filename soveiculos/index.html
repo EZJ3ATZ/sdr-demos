@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uma demonstração para a Só Veículos</title>
+<style>
+:root{--marca:#001848;--marca-escura:#000d27;--marca-clara:#e0e3e9}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f5f5f4;color:#1a1a19;line-height:1.6}
+.wrap{max-width:680px;margin:0 auto;padding:44px 22px 70px}
+.topo{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.topo img{height:44px;width:auto;max-width:170px;object-fit:contain;background:#111;border-radius:10px;padding:6px 12px}
+.topo span{font-size:12px;color:#8a8a85;border-left:1px solid #dcdcd6;padding-left:12px;line-height:1.4}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--marca);font-weight:700}
+h1{font-size:clamp(26px,6vw,38px);line-height:1.15;margin:12px 0 16px;color:var(--marca-escura)}
+.lede{font-size:17px;color:#54544e;margin-bottom:8px}
+.num{font-weight:800;color:var(--marca)}
+.cta{display:block;background:var(--marca);color:#fff;text-align:center;font-size:18px;font-weight:700;
+ padding:17px 20px;border-radius:14px;text-decoration:none;margin:30px 0 10px;box-shadow:0 6px 22px rgba(0,0,0,.25)}
+.cta:active{transform:translateY(1px)}
+.sub-cta{text-align:center;font-size:13px;color:#7d7d76;margin-bottom:34px}
+h2{font-size:20px;margin:38px 0 14px;color:var(--marca-escura)}
+.passos{display:flex;flex-direction:column;gap:12px}
+.passo{background:#fff;border:1px solid #e4e4dd;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+.passo .n{background:var(--marca);color:#fff;font-weight:800;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.passo b{display:block;margin-bottom:2px}
+.passo p{font-size:14px;color:#54544e}
+ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px}
+li{background:#fff;border:1px solid #e4e4dd;border-left:4px solid var(--marca);border-radius:12px;padding:13px 16px;font-size:14.5px;color:#3a3a35}
+li b{color:#1a1a19}
+.contato{background:#fff;border:2px solid var(--marca);border-radius:16px;padding:20px;margin-top:26px;text-align:center}
+.contato .ctit{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--marca);font-weight:700}
+.contato .cnome{font-size:17px;font-weight:700;margin:6px 0 14px}
+.cbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.cbtn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14.5px}
+.cbtn.wpp{background:#00a884;color:#fff}
+.cbtn.mail{background:var(--marca-clara);color:var(--marca-escura);border:1px solid var(--marca)}
+.honesto{background:var(--marca-clara);border:1px solid var(--marca);border-radius:12px;padding:14px 17px;font-size:13.5px;color:var(--marca-escura);margin-top:36px;line-height:1.55}
+.rodape{margin-top:34px;font-size:12.5px;color:#8a8a85;text-align:center;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="topo"><img src="data:image/png;base64,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" alt="Só Veículos"/><span>demonstração<br/>independente</span></div>
+ <div class="eyebrow">Preparada para a Só Veículos</div>
+ <h1>E se o WhatsApp da Só Veículos respondesse em segundos, 24 horas por dia?</h1>
+ <p class="lede">Quem procura um carro de alto padrão fala com mais de uma loja ao mesmo tempo. O primeiro atendimento que responde bem é o que leva a visita. Fora do horário, o lead espera. E quem espera esfria.</p>
+ <p class="lede">Para mostrar o que é possível, montamos um atendente de IA usando <span class="num">os 58 veículos do estoque público de vocês</span>. Ele entende o que o cliente procura do jeito que ele escreve, mostra os carros certos com foto e link, e entrega o lead qualificado: nome, contato, perfil de busca e veículos de interesse.</p>
+
+ <a class="cta" href="demo.html">Abrir a demonstração →</a>
+ <div class="sub-cta">Abre no navegador, sem instalar nada. Digite como um cliente digitaria. Peça um Porsche até 1 milhão.</div>
+
+ <h2>Como funcionaria na prática</h2>
+ <div class="passos">
+  <div class="passo"><div class="n">1</div><div><b>O lead chega</b><p>Do anúncio, do site ou do Instagram, no mesmo número de WhatsApp que vocês já usam.</p></div></div>
+  <div class="passo"><div class="n">2</div><div><b>A IA atende e qualifica</b><p>Em segundos, a qualquer hora. Esportivo ou SUV, blindado ou não, faixa de valor. E já mostra os carros certos do estoque, que se mantém atualizado sozinho.</p></div></div>
+  <div class="passo"><div class="n">3</div><div><b>O consultor recebe pronto</b><p>Lead qualificado com resumo completo no CRM de vocês e notificação na hora no WhatsApp do consultor. Ele entra pra fechar a visita.</p></div></div>
+ </div>
+
+ <h2>Por que isso importa</h2>
+ <ul>
+  <li><b>Menu não é atendimento.</b> O robô de apertar botão coleta nome e joga o cliente numa fila. Este aqui entende o que a pessoa escreveu, mostra o carro certo com foto e já agenda a visita.</li>
+  <li><b>Velocidade é conversão.</b> Lead de alto padrão respondido no primeiro minuto tem muito mais chance de virar visita do que o que espera horas.</li>
+  <li><b>Nenhum lead perdido.</b> Madrugada, domingo, feriado: o atendimento não dorme.</li>
+  <li><b>Inteligência de demanda:</b> o sistema registra o que os clientes pedem e o estoque não tem. Informação que hoje se perde na conversa.</li>
+ </ul>
+
+ <h2>E se vocês precisarem diferente?</h2>
+ <p class="lede">A solução é nossa de ponta a ponta, do motor de conversa ao painel. Então ela se molda ao jeito de vocês: fluxo de atendimento, regras de repasse por consultor, relatórios, integração com o CRM que vocês já usam.</p>
+ <p class="lede">E não precisa parar no atendimento. Se vocês enxergam gargalo em outro processo, avaliação de troca, pós-venda, documentação, e acharem pertinente, a gente marca uma conversa: eu entendo como funciona hoje e digo com franqueza o que dá pra otimizar com IA e o que não vale a pena.</p>
+
+ <div class="contato">
+  <div class="ctit">Falar com quem fez</div>
+  <div class="cnome">Matheus Costa · Belo Horizonte</div>
+  <div class="cbtns">
+   <a class="cbtn wpp" href="https://wa.me/5531982201678?text=Oi%20Matheus%2C%20vi%20a%20demonstra%C3%A7%C3%A3o%20da%20Só%20Veículos">WhatsApp (31) 98220-1678</a>
+   <a class="cbtn mail" href="mailto:matheusviniciuscosta2007@gmail.com">matheusviniciuscosta2007@gmail.com</a>
+  </div>
+ </div>
+
+ <div class="honesto">Transparência: isto é uma demonstração técnica independente, construída apenas com informações públicas do site soveiculos.com.br. Nenhum dado interno foi acessado e não há vínculo com a Só Veículos. Os veículos exibidos são os anúncios públicos de vocês; o atendente é ilustrativo e não representa a empresa. Esta demonstração não grava nada: tudo roda no navegador de quem testa.</div>
+
+ <div class="rodape">Preparado por Matheus Costa · Belo Horizonte · 2026<br/>Se fizer sentido, a conversa é rápida e sem compromisso.</div>
+</div>
+</body>
+</html>
