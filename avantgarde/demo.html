@@ -138,10 +138,17 @@ async function inicio(){
 function chipsIniciais(){
  const conta=f=>BASE.filter(f).length;const ops=[];
  if(conta(x=>x.cat==='esportivo')>=2)ops.push({t:'Esportivos',f:()=>{S.cat='esportivo';perguntaFaixa()}});
- if(conta(x=>x.cat==='suv')>=2)ops.push({t:'SUVs premium',f:()=>{S.cat='suv';perguntaFaixa()}});
+ if(conta(x=>x.cat==='suv')>=2)ops.push({t:'SUVs',f:()=>{S.cat='suv';perguntaFaixa()}});
  if(conta(x=>x.bl)>=2)ops.push({t:'Blindados',f:()=>{S.bl=true;perguntaFaixa()}});
  if(conta(x=>x.cat==='picape')>=2)ops.push({t:'Picapes',f:()=>{S.cat='picape';perguntaFaixa()}});
+ if(conta(x=>x.cat==='hatch')>=2)ops.push({t:'Hatches',f:()=>{S.cat='hatch';perguntaFaixa()}});
  if(conta(x=>x.cat==='sedan')>=2)ops.push({t:'Sedãs',f:()=>{S.cat='sedan';perguntaFaixa()}});
+ // estoque sem variedade de categoria: oferece por marca, que é sempre confiavel
+ if(ops.length<2){
+  const c={};BASE.forEach(x=>{if(x.marca)c[x.marca]=(c[x.marca]||0)+1});
+  const tops=Object.entries(c).sort((a,b)=>b[1]-a[1]).filter(([,n])=>n>=2).slice(0,4);
+  if(tops.length>=2)return tops.map(([m])=>({t:m.charAt(0).toUpperCase()+m.slice(1),f:()=>{S.marca=m;perguntaFaixa()}}));
+ }
  if(!ops.length)ops.push({t:'Ver o estoque',f:()=>perguntaFaixa()});
  return ops.slice(0,4)}
 function rotuloBR(v){if(v>=1e6){const s=(v/1e6).toFixed(1).replace('.',',').replace(',0','');return 'R$ '+s+' milh'+(v<2e6?'ão':'ões')}return 'R$ '+Math.round(v/1000)+' mil'}
