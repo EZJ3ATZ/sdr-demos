@@ -111,6 +111,7 @@ function parse(t){t=t.toLowerCase();
  let m=t.match(/(\d+[.,]?\d*)\s*(mil|k)\b/);if(m)S.teto=parseFloat(m[1].replace(',','.'))*1e3;
  m=t.match(/(\d+[.,]?\d*)\s*(milh|mi\b)/);if(m)S.teto=parseFloat(m[1].replace(',','.'))*1e6;
  m=t.match(/r\$\s*([\d.]{4,})/);if(m)S.teto=+m[1].replace(/\./g,'');
+ if(!S.teto){m=t.match(/\b(\d{1,3}(?:\.\d{3}){1,3}|\d{4,9})\b/);if(m){const v=+m[1].replace(/\./g,'');if(v>=800)S.teto=v}}
  if(!S.op&&S.teto){S.op=S.teto>150000?'venda':(S.teto<=50000?'aluguel':null)}
 }
 function buscar(){let r=BASE.filter(x=>!S.op||x.op===S.op);
@@ -161,7 +162,7 @@ async function finalizar(txt){S.fase='fim';
  await digitando(850);
  const r=document.createElement('div');r.className='resumo';ultimoLado='resumo';
  const tipoTx=S.tipo?S.tipo.replace('-',' '):'imóvel';
- r.innerHTML=`<span class="tag">LEAD QUALIFICADO → ENVIADO AO CORRETOR</span><br/><b>${txt}</b><br/>Interesse: <b>${S.op==='venda'?'compra':'aluguel'}</b> · <b>${tipoTx}</b>${S.quartos?' · '+S.quartos+'+ quartos':''}${S.teto?' · até '+fmt(S.teto):''}${S.bairro?' · '+S.bairro.replace(/-/g,' '):''}<br/>Visita: <b>${S.quando}</b> · Imóveis apresentados: ${[...S.mostrados].slice(0,4).map(i=>'#'+i).join(', ')||'nenhum'}<br/><i>Lead atendido e qualificado em segundos, a qualquer hora do dia.</i>`;
+ r.innerHTML=`<span class="tag">LEAD QUALIFICADO → ENVIADO AO CORRETOR</span><br/><b>${txt}</b><br/>Interesse: <b>${S.op==='venda'?'compra':'aluguel'}</b> · <b>${tipoTx}</b>${S.quartos?' · '+S.quartos+'+ quartos':''}${S.teto?' · até '+fmt(S.teto):''}${S.bairro?' · '+S.bairro.replace(/-/g,' '):''}${/\d{8,}/.test(txt.replace(/\D/g,''))?'':'<br/>Telefone: o número deste WhatsApp'}<br/>Visita: <b>${S.quando}</b> · Imóveis apresentados: ${[...S.mostrados].slice(0,4).map(i=>'#'+i).join(', ')||'nenhum'}<br/><i>Lead atendido e qualificado em segundos, a qualquer hora do dia.</i>`;
  wrap.appendChild(r);scroll();
  await bot('Qualquer outra dúvida, é só me chamar por aqui. Estou disponível 24h 🙂')}
 async function entradaLivre(txt){
@@ -169,6 +170,9 @@ async function entradaLivre(txt){
  const antes=JSON.stringify([S.op,S.tipo,S.bairro,S.quartos,S.teto]);
  parse(txt);
  const mudou=antes!==JSON.stringify([S.op,S.tipo,S.bairro,S.quartos,S.teto]);
+ if(!mudou&&S.fase==='resultado'){
+  await bot('Essa eu não entendi 🙂 Quer ver mais opções, mudar a busca ou agendar uma visita?');
+  chips([{t:'📅 Agendar visita',f:agendar},{t:'Ver outras opções',f:mostrar},{t:'Mudar a busca',f:reiniciar}]);return}
  if(S.op&&(S.tipo||S.teto||S.quartos)){mostrar();return}
  if(S.op&&mudou){perguntaTipo();return}
  if(mudou&&!S.op){await bot('Entendi! E você pensa em comprar ou alugar?');chips([{t:'Comprar',f:()=>{S.op='venda';S.tipo?mostrar():perguntaTipo()}},{t:'Alugar',f:()=>{S.op='aluguel';S.tipo?mostrar():perguntaTipo()}}]);return}
