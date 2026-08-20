@@ -145,7 +145,7 @@ async function mostrar(){S.fase='resultado';
  const n=Math.min(r.length,3);
  await bot(r.length===1?'Encontrei 1 opção na carteira com esse perfil:':`Encontrei ${r.length} opções com esse perfil. Separei ${n===1?'a melhor':'as '+n+' melhores'}:`);
  r.slice(0,3).forEach(x=>{S.mostrados.add(x.id);card(x)});
- await bot('Gostou de alguma? Posso agendar uma visita sem compromisso — ou te mostrar outras opções.');
+ await bot('Gostou de alguma? Posso agendar uma visita sem compromisso, ou te mostrar outras opções.');
  chips([{t:'📅 Agendar visita',f:agendar},{t:'Ver outras opções',f:mostrar},{t:'Mudar a busca',f:reiniciar}])}
 async function reiniciar(){S.tipo=null;S.quartos=null;S.teto=null;S.bairro=null;S.mostrados.clear();
  await bot('Sem problema! Vamos recomeçar.');
@@ -154,16 +154,16 @@ async function agendar(){S.fase='agenda';
  await bot('Ótima escolha! Qual período fica melhor pra você?');
  chips([{t:'Amanhã de manhã',f:()=>pedirNome('amanhã de manhã')},{t:'Amanhã à tarde',f:()=>pedirNome('amanhã à tarde')},{t:'Outro dia',f:()=>pedirNome('a combinar')}])}
 async function pedirNome(quando){S.quando=quando;S.fase='nome';
- await bot('Combinado! Pra finalizar, me diz seu nome e um telefone de contato — um dos nossos corretores confirma com você 🙂')}
+ await bot('Combinado! Pra finalizar, me diz seu nome e um telefone de contato. Um dos nossos corretores confirma com você 🙂')}
 async function finalizar(txt){S.fase='fim';
  const primeiro=txt.split(/[ ,]/)[0];
- await bot(`Obrigada, ${primeiro}! Registrei tudo aqui e já encaminhei pro corretor responsável — ele entra em contato pra confirmar a visita${S.quando==='a combinar'?' no melhor dia pra você':' de '+S.quando}. 🏡`);
+ await bot(`Obrigada, ${primeiro}! Registrei tudo aqui e já encaminhei pro corretor responsável. Ele entra em contato pra confirmar a visita${S.quando==='a combinar'?' no melhor dia pra você':' de '+S.quando}. 🏡`);
  await digitando(850);
  const r=document.createElement('div');r.className='resumo';ultimoLado='resumo';
  const tipoTx=S.tipo?S.tipo.replace('-',' '):'imóvel';
- r.innerHTML=`<span class="tag">LEAD QUALIFICADO → ENVIADO AO CORRETOR</span><br/><b>${txt}</b><br/>Interesse: <b>${S.op==='venda'?'compra':'aluguel'}</b> · <b>${tipoTx}</b>${S.quartos?' · '+S.quartos+'+ quartos':''}${S.teto?' · até '+fmt(S.teto):''}${S.bairro?' · '+S.bairro.replace(/-/g,' '):''}<br/>Visita: <b>${S.quando}</b> · Imóveis apresentados: ${[...S.mostrados].slice(0,4).map(i=>'#'+i).join(', ')||'—'}<br/><i>Lead atendido e qualificado em segundos — a qualquer hora do dia.</i>`;
+ r.innerHTML=`<span class="tag">LEAD QUALIFICADO → ENVIADO AO CORRETOR</span><br/><b>${txt}</b><br/>Interesse: <b>${S.op==='venda'?'compra':'aluguel'}</b> · <b>${tipoTx}</b>${S.quartos?' · '+S.quartos+'+ quartos':''}${S.teto?' · até '+fmt(S.teto):''}${S.bairro?' · '+S.bairro.replace(/-/g,' '):''}<br/>Visita: <b>${S.quando}</b> · Imóveis apresentados: ${[...S.mostrados].slice(0,4).map(i=>'#'+i).join(', ')||'nenhum'}<br/><i>Lead atendido e qualificado em segundos, a qualquer hora do dia.</i>`;
  wrap.appendChild(r);scroll();
- await bot('Qualquer outra dúvida, é só me chamar por aqui — estou disponível 24h 🙂')}
+ await bot('Qualquer outra dúvida, é só me chamar por aqui. Estou disponível 24h 🙂')}
 async function entradaLivre(txt){
  if(S.fase==='nome'){finalizar(txt);return}
  const antes=JSON.stringify([S.op,S.tipo,S.bairro,S.quartos,S.teto]);
@@ -172,7 +172,7 @@ async function entradaLivre(txt){
  if(S.op&&(S.tipo||S.teto||S.quartos)){mostrar();return}
  if(S.op&&mudou){perguntaTipo();return}
  if(mudou&&!S.op){await bot('Entendi! E você pensa em comprar ou alugar?');chips([{t:'Comprar',f:()=>{S.op='venda';S.tipo?mostrar():perguntaTipo()}},{t:'Alugar',f:()=>{S.op='aluguel';S.tipo?mostrar():perguntaTipo()}}]);return}
- await bot('Eu te ajudo a encontrar imóvel pra comprar ou alugar em Lourdes, Serra, Funcionários e região 🙂 Pode me falar do seu jeito — por exemplo: "apartamento de 3 quartos até 2 milhões".')}
+ await bot('Eu te ajudo a encontrar imóvel pra comprar ou alugar em Lourdes, Serra, Funcionários e região 🙂 Pode me falar do seu jeito, por exemplo: "apartamento de 3 quartos até 2 milhões".')}
 document.getElementById('send').onclick=()=>{const t=inp.value.trim();if(!t)return;limparChips();bolha(t,'out');inp.value='';entradaLivre(t)};
 inp.addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('send').onclick()});
 inicio();
