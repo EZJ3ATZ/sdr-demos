@@ -154,6 +154,8 @@ function faixasDoFiltro(){
  for(let i=1;i<3;i++)if(q[i]<=q[i-1])q[i]=niceBR(Math.round(q[i-1]*1.6));
  return [{t:'Até '+rotuloBR(q[0]),v:q[0]},{t:'Até '+rotuloBR(q[1]),v:q[1]},{t:'Até '+rotuloBR(q[2]),v:q[2]},{t:'Acima de '+rotuloBR(q[2]),v:0}]}
 async function perguntaFaixa(){S.fase='faixa';
+ const disp=BASE.filter(x=>(!S.cat||x.cat===S.cat)&&(!S.marca||x.marca===S.marca)&&(!S.bl||x.bl));
+ if(disp.length<=4){await bot(disp.length===1?'Tenho uma opção com esse perfil no estoque. Olha:':'Tenho '+disp.length+' opções com esse perfil no estoque. Olha:');mostrar();return}
  await bot('Boa escolha. E qual faixa de valor você tem em mente?');
  chips(faixasDoFiltro().map(f=>({t:f.t,f:()=>{if(f.v)S.teto=f.v;mostrar()}})))}
 async function mostrar(){S.fase='resultado';
