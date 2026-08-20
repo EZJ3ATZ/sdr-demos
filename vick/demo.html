@@ -126,7 +126,11 @@ function buscar(){let r=BASE.filter(x=>true);
  r=r.filter(x=>!S.mostrados.has(x.id));
  const alvo=S.teto||((r.length&&r.map(x=>x.preco).sort((a,b)=>a-b)[Math.floor(r.length/2)])||1);
  r.sort((a,b)=>(Math.abs(a.preco-alvo)/alvo-b.nf/400)-(Math.abs(b.preco-alvo)/alvo-a.nf/400));
- return r}
+ // diversidade: evita mostrar 3 vezes o mesmo modelo quando ha alternativa
+ const chave=x=>(x.titulo||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').split(' ').slice(0,2).join(' ');
+ const vistos={},primeiros=[],resto=[];
+ r.forEach(x=>{const k=chave(x);vistos[k]=(vistos[k]||0)+1;(vistos[k]<=1?primeiros:resto).push(x)});
+ return primeiros.concat(resto)}
 async function inicio(){
  await bot('Olá! 👋 Bem-vindo à Vick Blindados. Sou o assistente digital da loja.');
  await bot('Me conta: que tipo de carro você procura?');
