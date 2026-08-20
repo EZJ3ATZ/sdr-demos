@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uma demonstração para a Decisão Imóveis</title>
+<style>
+:root{--marca:#a80000;--marca-escura:#5c0000;--marca-clara:#f4e0e0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f7f6f4;color:#1d1a17;line-height:1.6}
+.wrap{max-width:680px;margin:0 auto;padding:44px 22px 70px}
+.topo{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.topo img{height:44px;width:auto;max-width:150px;object-fit:contain}
+.topo span{font-size:12px;color:#8a8378;border-left:1px solid #ddd6cc;padding-left:12px;line-height:1.4}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--marca);font-weight:700}
+h1{font-size:clamp(26px,6vw,38px);line-height:1.15;margin:12px 0 16px;color:var(--marca-escura)}
+.lede{font-size:17px;color:#55504a;margin-bottom:8px}
+.num{font-weight:800;color:var(--marca)}
+.cta{display:block;background:var(--marca);color:#fff;text-align:center;font-size:18px;font-weight:700;
+ padding:17px 20px;border-radius:14px;text-decoration:none;margin:30px 0 10px;box-shadow:0 6px 22px color-mix(in srgb,var(--marca) 30%,transparent)}
+.cta:active{transform:translateY(1px)}
+.sub-cta{text-align:center;font-size:13px;color:#7d766c;margin-bottom:34px}
+h2{font-size:20px;margin:38px 0 14px;color:var(--marca-escura)}
+.passos{display:flex;flex-direction:column;gap:12px}
+.passo{background:#fff;border:1px solid #e6e0d6;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+.passo .n{background:var(--marca);color:#fff;font-weight:800;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.passo b{display:block;margin-bottom:2px}
+.passo p{font-size:14px;color:#55504a}
+ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px}
+li{background:#fff;border:1px solid #e6e0d6;border-left:4px solid var(--marca);border-radius:12px;padding:13px 16px;font-size:14.5px;color:#3c3833}
+li b{color:#1d1a17}
+.honesto{background:var(--marca-clara);border:1px solid var(--marca);border-radius:12px;padding:14px 17px;font-size:13.5px;color:var(--marca-escura);margin-top:36px;line-height:1.55}
+.rodape{margin-top:34px;font-size:12.5px;color:#8a8378;text-align:center;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="topo"><img src="data:image/png;base64,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" alt="Decisão Imóveis"/><span>demonstração<br/>independente</span></div>
+ <div class="eyebrow">Preparada para a Decisão Imóveis</div>
+ <h1>E se o WhatsApp da Decisão Imóveis respondesse em segundos, 24 horas por dia?</h1>
+ <p class="lede">Hoje, o lead que clica no anúncio de vocês cai num WhatsApp que depende de alguém estar disponível. Fora do horário, ele espera. E quem espera esfria.</p>
+ <p class="lede">Para mostrar o que é possível, montamos um atendente de IA usando <span class="num">os 3.463 imóveis do site de vocês</span>. Ele entende o que o cliente procura, mostra as melhores opções da <b>sua carteira</b> com foto e link, e entrega o lead qualificado: nome, telefone, perfil de busca e imóveis de interesse.</p>
+
+ <a class="cta" href="demo.html">Abrir a demonstração →</a>
+ <div class="sub-cta">Abre no navegador, sem instalar nada. Digite como um cliente digitaria.</div>
+
+ <h2>Como funcionaria na prática</h2>
+ <div class="passos">
+  <div class="passo"><div class="n">1</div><div><b>O lead chega</b><p>Do anúncio, do site ou do Instagram, no mesmo número de WhatsApp que vocês já usam.</p></div></div>
+  <div class="passo"><div class="n">2</div><div><b>A IA atende e qualifica</b><p>Em segundos, a qualquer hora. Comprar ou alugar, tipo, quartos, faixa de valor. E já mostra os imóveis certos da carteira, que se mantém atualizada sozinha.</p></div></div>
+  <div class="passo"><div class="n">3</div><div><b>O corretor recebe pronto</b><p>Lead qualificado com resumo completo, direto no CRM que vocês já usam. O corretor entra só na hora que interessa: pra fechar a visita.</p></div></div>
+ </div>
+
+ <h2>Por que isso importa</h2>
+ <ul>
+  <li><b>Velocidade é conversão.</b> Lead respondido no primeiro minuto tem muito mais chance de virar visita do que o que espera horas.</li>
+  <li><b>Nenhum lead perdido.</b> Madrugada, domingo, feriado: o atendimento não dorme.</li>
+  <li><b>Inteligência de demanda:</b> o sistema registra o que os clientes pedem e a carteira não tem. Informação que hoje se perde na conversa.</li>
+  <li><b>Sem trocar de sistema:</b> o lead cai qualificado no CRM atual de vocês.</li>
+ </ul>
+
+ <div class="honesto">Transparência: isto é uma demonstração técnica independente, construída apenas com informações públicas do site www.decisaoimoveis.com.br. Nenhum dado interno foi acessado e não há vínculo com a Decisão Imóveis. Os imóveis exibidos são os anúncios públicos de vocês; o atendente é ilustrativo e não representa a empresa.</div>
+
+ <div class="rodape">Preparado por Matheus Costa · Belo Horizonte · 2026<br/>Se fizer sentido, respondo qualquer dúvida e apresento em 20 minutos.</div>
+</div>
+</body>
+</html>
