@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uma demonstração para a Imobiliária Ampla</title>
+<style>
+:root{--marca:#0060a8;--marca-escura:#00345c;--marca-clara:#e0ebf4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f7f6f4;color:#1d1a17;line-height:1.6}
+.wrap{max-width:680px;margin:0 auto;padding:44px 22px 70px}
+.topo{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.topo img{height:44px;width:auto;max-width:150px;object-fit:contain}
+.topo span{font-size:12px;color:#8a8378;border-left:1px solid #ddd6cc;padding-left:12px;line-height:1.4}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--marca);font-weight:700}
+h1{font-size:clamp(26px,6vw,38px);line-height:1.15;margin:12px 0 16px;color:var(--marca-escura)}
+.lede{font-size:17px;color:#55504a;margin-bottom:8px}
+.num{font-weight:800;color:var(--marca)}
+.cta{display:block;background:var(--marca);color:#fff;text-align:center;font-size:18px;font-weight:700;
+ padding:17px 20px;border-radius:14px;text-decoration:none;margin:30px 0 10px;box-shadow:0 6px 22px color-mix(in srgb,var(--marca) 30%,transparent)}
+.cta:active{transform:translateY(1px)}
+.sub-cta{text-align:center;font-size:13px;color:#7d766c;margin-bottom:34px}
+h2{font-size:20px;margin:38px 0 14px;color:var(--marca-escura)}
+.passos{display:flex;flex-direction:column;gap:12px}
+.passo{background:#fff;border:1px solid #e6e0d6;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+.passo .n{background:var(--marca);color:#fff;font-weight:800;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.passo b{display:block;margin-bottom:2px}
+.passo p{font-size:14px;color:#55504a}
+ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px}
+li{background:#fff;border:1px solid #e6e0d6;border-left:4px solid var(--marca);border-radius:12px;padding:13px 16px;font-size:14.5px;color:#3c3833}
+li b{color:#1d1a17}
+.contato{background:#fff;border:2px solid var(--marca);border-radius:16px;padding:20px;margin-top:26px;text-align:center}
+.contato .ctit{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--marca);font-weight:700}
+.contato .cnome{font-size:17px;font-weight:700;margin:6px 0 14px}
+.cbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.cbtn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14.5px}
+.cbtn.wpp{background:#00a884;color:#fff}
+.cbtn.mail{background:var(--marca-clara);color:var(--marca-escura);border:1px solid var(--marca)}
+.honesto{background:var(--marca-clara);border:1px solid var(--marca);border-radius:12px;padding:14px 17px;font-size:13.5px;color:var(--marca-escura);margin-top:36px;line-height:1.55}
+.rodape{margin-top:34px;font-size:12.5px;color:#8a8378;text-align:center;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="topo"><img src="data:image/png;base64,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" alt="Imobiliária Ampla"/><span>demonstração<br/>independente</span></div>
+ <div class="eyebrow">Preparada para a Imobiliária Ampla</div>
+ <h1>E se o WhatsApp da Imobiliária Ampla respondesse em segundos, 24 horas por dia?</h1>
+ <p class="lede">Hoje, o lead que clica no anúncio de vocês cai num WhatsApp que depende de alguém estar disponível. Fora do horário, ele espera. E quem espera esfria.</p>
+ <p class="lede">Para mostrar o que é possível, montamos um atendente de IA usando <span class="num">os 1.431 imóveis do site de vocês</span>. Ele entende o que o cliente procura, mostra as melhores opções da <b>sua carteira</b> com foto e link, e entrega o lead qualificado: nome, telefone, perfil de busca e imóveis de interesse.</p>
+
+ <a class="cta" href="demo.html">Abrir a demonstração →</a>
+ <div class="sub-cta">Abre no navegador, sem instalar nada. Digite como um cliente digitaria.</div>
+
+ <h2>Como funcionaria na prática</h2>
+ <div class="passos">
+  <div class="passo"><div class="n">1</div><div><b>O lead chega</b><p>Do anúncio, do site ou do Instagram, no mesmo número de WhatsApp que vocês já usam.</p></div></div>
+  <div class="passo"><div class="n">2</div><div><b>A IA atende e qualifica</b><p>Em segundos, a qualquer hora. Comprar ou alugar, tipo, quartos, faixa de valor. E já mostra os imóveis certos da carteira, que se mantém atualizada sozinha.</p></div></div>
+  <div class="passo"><div class="n">3</div><div><b>O corretor recebe pronto</b><p>Lead qualificado com resumo completo, direto no CRM que vocês já usam, e notificação na hora no WhatsApp do corretor. Ele entra só na hora que interessa: pra fechar a visita.</p></div></div>
+ </div>
+
+ <h2>Por que isso importa</h2>
+ <ul>
+  <li><b>Menu não é atendimento.</b> O robô de apertar botão coleta nome e joga o cliente numa fila. Este aqui entende o que a pessoa escreveu, mostra o imóvel certo com foto e já agenda a visita.</li>
+  <li><b>Velocidade é conversão.</b> Lead respondido no primeiro minuto tem muito mais chance de virar visita do que o que espera horas.</li>
+  <li><b>Nenhum lead perdido.</b> Madrugada, domingo, feriado: o atendimento não dorme.</li>
+  <li><b>Inteligência de demanda:</b> o sistema registra o que os clientes pedem e a carteira não tem. Informação que hoje se perde na conversa.</li>
+  <li><b>Sem trocar de sistema:</b> o lead cai qualificado no CRM atual de vocês.</li>
+ </ul>
+
+ <h2>E se vocês precisarem diferente?</h2>
+ <p class="lede">A solução é nossa de ponta a ponta, do motor de conversa ao painel. Então ela se molda ao jeito de vocês: fluxo de atendimento, regras de repasse por corretor, relatórios, integrações. Usa CRM? O lead nasce lá dentro, com a qualificação inteira nas anotações. Não usa? A gente opera do jeito que vocês trabalham hoje.</p>
+ <p class="lede">E não precisa parar no atendimento. Se vocês enxergam gargalo em outro processo, atendimento, locação, pós-venda, relatórios, e acharem pertinente, a gente marca uma conversa: eu entendo como funciona hoje e digo com franqueza o que dá pra otimizar com IA e o que não vale a pena.</p>
+
+ <div class="contato">
+  <div class="ctit">Falar com quem fez</div>
+  <div class="cnome">Matheus Costa · Belo Horizonte</div>
+  <div class="cbtns">
+   <a class="cbtn wpp" href="https://wa.me/5531982201678?text=Oi%20Matheus%2C%20vi%20a%20demonstra%C3%A7%C3%A3o%20da%20Imobiliária%20Ampla">WhatsApp (31) 98220-1678</a>
+   <a class="cbtn mail" href="mailto:matheusviniciuscosta2007@gmail.com">matheusviniciuscosta2007@gmail.com</a>
+  </div>
+ </div>
+
+ <div class="honesto">Transparência: isto é uma demonstração técnica independente, construída apenas com informações públicas do site www.imobiliariaampla.com.br. Nenhum dado interno foi acessado e não há vínculo com a Imobiliária Ampla. Os imóveis exibidos são os anúncios públicos de vocês; o atendente é ilustrativo e não representa a empresa.</div>
+
+ <div class="rodape">Preparado por Matheus Costa · Belo Horizonte · 2026<br/>Se fizer sentido, a conversa é rápida e sem compromisso.</div>
+</div>
+</body>
+</html>
