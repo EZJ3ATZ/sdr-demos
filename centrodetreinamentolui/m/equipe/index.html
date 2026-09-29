@@ -65,7 +65,7 @@ h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02}h2{font-size:clamp(1.6rem
 footer{background:#F3F4F2;color:var(--texto-2);border-top:1px solid var(--regua)}footer a{color:var(--cor)}
 .barra{background:#fff;border-top:1px solid var(--regua)}.barra a{color:var(--texto);border-right:1px solid var(--regua)}.barra a:last-child{border-right:0}.barra a.wa{color:var(--cor)}
 
-.nav .btn,.nav .btn:hover{color:var(--btn-texto)}.nav .btn-preto,.nav .btn-preto:hover{color:#fff}
+.nav .btn,.nav .btn:hover{color:var(--btn-texto)}.nav .btn-preto,.nav .btn-preto:hover,[data-modelo=studio] .nav .btn,[data-modelo=studio] .nav .btn:hover{color:#fff}
 @media (max-width:600px){.marca img{width:36px;height:36px}.marca b{font-size:1rem}.marca small{display:none}.nav .btn{padding:8px 10px;font-size:.8rem;letter-spacing:0}.topo .container{min-height:60px;gap:10px}
 [data-modelo=studio] .marca b{font-size:.8rem;letter-spacing:.12em}[data-modelo=studio] .nav .btn{font-size:.68rem;letter-spacing:.06em}
 h1{font-size:clamp(2rem,10.5vw,3rem)}[data-modelo=equipe] h1,[data-modelo=studio] h1{font-size:clamp(1.7rem,7.8vw,2.6rem)}.eyebrow{letter-spacing:.08em;font-size:.74rem}}
@@ -91,6 +91,7 @@ h1{font-size:clamp(2rem,10.5vw,3rem)}[data-modelo=equipe] h1,[data-modelo=studio
 </main>
 <footer><div class="container"><span>Centro de Treinamento Luiz Team · R. Padre Eustáquio, 1106, Carlos Prates, Belo Horizonte</span><span><a href="https://www.instagram.com/ctluizteam/" target="_blank" rel="noopener">Instagram</a> · <a class="js-wa" href="#" data-msg="Oi! Vi o site e queria informações sobre as aulas.">WhatsApp</a> · <a href="https://www.google.com/maps?cid=14853580838454615926" target="_blank" rel="noopener">Google Maps</a></span></div></footer>
 <nav class="barra" aria-label="Atalhos"><a class="wa js-wa" href="#" data-msg="Oi! Vi o site e quero agendar uma aula experimental."><svg class="icon"><use href="#i-wa"/></svg>WhatsApp</a><a href="#horarios"><svg class="icon-l"><use href="#i-relogio"/></svg>Horários</a><a href="#contato"><svg class="icon-l"><use href="#i-pin"/></svg>Como chegar</a></nav>
+<script>(function(){try{if(navigator.webdriver||!location.hostname||location.search.indexOf("nc")>-1||localStorage.getItem("nc"))return;var p=location.hostname+location.pathname.split("index.html")[0];if(p.slice(-1)==="/")p=p.slice(0,-1);fetch("https://hits.sh/"+p+".svg",{mode:"no-cors",cache:"no-store"}).catch(function(){});}catch(e){}})();</script>
 <script>
 (function(){var W="5531975308228";document.querySelectorAll(".js-wa").forEach(function(a){a.href="https://wa.me/"+W+"?text="+encodeURIComponent(a.getAttribute("data-msg"));a.target="_blank";a.rel="noopener";});document.querySelectorAll('[data-d="'+new Date().getDay()+'"]').forEach(function(x){x.classList.add("hoje");});})();
 </script>
